@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Destination;
 use App\Models\Service;
 use App\Models\Testimonial;
 use Illuminate\Http\Request;
@@ -36,7 +37,13 @@ class HomeController extends Controller
             ->take(3)
             ->get();
 
-        return view('home', compact('featuredServices', 'testimonials'));
+        $destinations = Destination::active()
+            ->with('images')
+            ->latest()
+            ->take(6)
+            ->get();
+
+        return view('home', compact('featuredServices', 'testimonials', 'destinations'));
     }
 
     /**
@@ -65,11 +72,11 @@ class HomeController extends Controller
     public function subscribe(Request $request)
     {
         $validated = $request->validate([
-            'email' => 'required|email|max:255'
+            'email' => 'required|email|unique:newsletter_subscriptions,email'
         ]);
 
-        // Here you would typically add to mailing list
-        // For now, we'll just redirect with success message
+        // Store the subscription
+        //NewsletterSubscription::create($validated);
 
         return back()->with('success', 'Thank you for subscribing to our newsletter!');
     }

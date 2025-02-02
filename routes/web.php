@@ -17,6 +17,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\ForgotPasswordController;
 use App\Http\Controllers\Auth\ResetPasswordController;
 use App\Http\Controllers\Auth\VerificationController;
+use App\Http\Controllers\DestinationController;
 use Illuminate\Support\Facades\App;
 
 /*
@@ -34,6 +35,10 @@ Route::post('/subscribe', [HomeController::class, 'subscribe'])->name('newslette
 Route::get('/services', [ServiceController::class, 'index'])->name('services.index');
 Route::get('/services/{service}', [ServiceController::class, 'show'])->name('services.show');
 Route::post('/services/{service}/book', [ServiceController::class, 'book'])->name('services.book')->middleware('auth');
+
+// Destinations Routes
+Route::get('/destinations', [DestinationController::class, 'index'])->name('destinations.index');
+Route::get('/destinations/{destination}', [DestinationController::class, 'show'])->name('destinations.show');
 
 // Authentication routes
 Auth::routes();
