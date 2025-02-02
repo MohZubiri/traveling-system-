@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="900" height="600" viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg">
+    <rect width="900" height="600" fill="#bf0a30"/>
+    <g fill="#fff">
+        <rect width="900" height="46.2" y="46.2"/>
+        <rect width="900" height="46.2" y="138.5"/>
+        <rect width="900" height="46.2" y="230.8"/>
+        <rect width="900" height="46.2" y="323.1"/>
+        <rect width="900" height="46.2" y="415.4"/>
+        <rect width="900" height="46.2" y="507.7"/>
+    </g>
+    <rect width="346.2" height="323.1" fill="#002868"/>
+    <g fill="#fff">
+        <g id="s5">
+            <g id="s4">
+                <g id="s3">
+                    <g id="s2">
+                        <g id="s1">
+                            <g id="s">
+                                <polygon points="28.5,47.7 31.8,58.1 42.9,58.1 33.9,64.5 37.3,74.9 28.5,68.5 19.7,74.9 23.1,64.5 14.1,58.1 25.2,58.1"/>
+                                <polygon points="28.5,47.7 31.8,58.1 42.9,58.1 33.9,64.5 37.3,74.9 28.5,68.5 19.7,74.9 23.1,64.5 14.1,58.1 25.2,58.1" transform="translate(57)"/>
+                                <polygon points="28.5,47.7 31.8,58.1 42.9,58.1 33.9,64.5 37.3,74.9 28.5,68.5 19.7,74.9 23.1,64.5 14.1,58.1 25.2,58.1" transform="translate(114)"/>
+                                <polygon points="28.5,47.7 31.8,58.1 42.9,58.1 33.9,64.5 37.3,74.9 28.5,68.5 19.7,74.9 23.1,64.5 14.1,58.1 25.2,58.1" transform="translate(171)"/>
+                                <polygon points="28.5,47.7 31.8,58.1 42.9,58.1 33.9,64.5 37.3,74.9 28.5,68.5 19.7,74.9 23.1,64.5 14.1,58.1 25.2,58.1" transform="translate(228)"/>
+                                <polygon points="28.5,47.7 31.8,58.1 42.9,58.1 33.9,64.5 37.3,74.9 28.5,68.5 19.7,74.9 23.1,64.5 14.1,58.1 25.2,58.1" transform="translate(285)"/>
+                            </g>
+                            <use xlink:href="#s" y="64"/>
+                        </g>
+                        <use xlink:href="#s1" y="128"/>
+                    </g>
+                    <use xlink:href="#s2" y="192"/>
+                </g>
+                <use xlink:href="#s3" y="256"/>
+            </g>
+        </g>
+    </g>
+</svg>

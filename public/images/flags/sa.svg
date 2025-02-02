@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="900" height="600" viewBox="0 0 900 600" xmlns="http://www.w3.org/2000/svg">
+    <rect width="900" height="600" fill="#006c35"/>
+    <g fill="#fff">
+        <text x="450" y="340" font-family="Traditional Arabic" font-size="120" text-anchor="middle" fill="#fff">لا إله إلا الله محمد رسول الله</text>
+        <path d="M651.4,300l-36.2,12.4l21.8,31.7l-38.9-3.1l2.5,39l-31.2-23.5l-18.6,33.8l-18.6-33.8l-31.2,23.5l2.5-39l-38.9,3.1l21.8-31.7l-36.2-12.4l36.2-12.4l-21.8-31.7l38.9,3.1l-2.5-39l31.2,23.5l18.6-33.8l18.6,33.8l31.2-23.5l-2.5,39l38.9-3.1l-21.8,31.7z"/>
+    </g>
+</svg>
