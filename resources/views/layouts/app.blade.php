@@ -20,10 +20,13 @@
     @endif
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     @stack('styles')
-    
+
     <style>
         body {
-            font-family: {{ App::getLocale() == 'ar' ? "'Cairo'" : "'Inter'" }}, sans-serif;
+
+                font-family: 'Cairo', sans-serif;
+
+
         }
         .navbar-brand {
             font-weight: 700;
@@ -37,11 +40,14 @@
         .nav-link:hover {
             color: #1A56DB;
         }
-        .nav-link.active {
+        .nav-link.active  {
             color: #1A56DB;
         }
         .navbar-nav .btn {
             padding: 0.5rem 1.5rem;
+        }
+        .bg-primary{
+            background-color: #298e20a6 !important;
         }
         .footer-link {
             color: #4B5563;
@@ -68,7 +74,38 @@
             background: #1A56DB;
             color: white;
         }
-
+        .btn-primary {
+            background-color: #2fb224 !important;
+            border-color: #2fb224 !important;
+        }
+        .btn-outline-primary {
+            color: #2fb224 !important;
+            border-color: #2fb224 !important;
+        }
+        .btn-outline-primary:hover {
+            background-color: #2fb224 !important;
+            color: white !important;
+        }
+        .text-primary {
+            color: #2fb224 !important;
+        }
+        .nav-link:hover {
+    color: #2fb224;
+}
+.nav-link.active {
+    color: #2fb224;
+}
+.footer-link:hover {
+    color: #2fb224;
+}
+.social-icon {
+    background: rgba(47, 178, 36, 0.1);
+    color: #2fb224;
+}
+.social-icon:hover {
+    background: #2fb224;
+    color: white;
+}
         /* RTL specific styles */
         @if(App::getLocale() == 'ar')
         .me-2, .me-3 {
@@ -86,6 +123,7 @@
             text-align: left !important;
         }
         @endif
+
     </style>
 </head>
 <body>
@@ -99,11 +137,11 @@
                     <span class="text-primary">Rih</span>lat
                 @endif
             </a>
-            
+
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            
+
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
                     <li class="nav-item">
@@ -122,12 +160,12 @@
                         <a class="nav-link" href="#contact">{{ __('messages.contact') }}</a>
                     </li>
                 </ul>
-                
+
                 <div class="d-flex gap-2">
 
                     @guest
-                        <a href="{{ route('login') }}" class="btn btn-outline-primary">{{ __('messages.login') }}</a>
-                        <a href="{{ route('register') }}" class="btn btn-primary">{{ __('messages.register') }}</a>
+                        <a href="{{ route('customer.login') }}" class="btn btn-outline-primary">{{ __('messages.login') }}</a>
+                        <a href="{{ route('customer.register') }}" class="btn btn-primary">{{ __('messages.register') }}</a>
                     @else
                         <div class="dropdown">
                             <button class="btn btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
@@ -199,7 +237,7 @@
                         <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-2 col-md-4">
                     <h5 class="mb-3">{{ __('messages.quick_links') }}</h5>
                     <div class="d-flex flex-column">
@@ -210,7 +248,7 @@
                         <a href="#" class="footer-link">{{ __('messages.contact') }}</a>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-2 col-md-4">
                     <h5 class="mb-3">{{ __('messages.our_services') }}</h5>
                     <div class="d-flex flex-column">
@@ -221,7 +259,7 @@
                         <a href="#" class="footer-link">{{ __('messages.visa_services') }}</a>
                     </div>
                 </div>
-                
+
                 <div class="col-lg-4 col-md-4">
                     <h5 class="mb-3">{{ __('messages.contact_info') }}</h5>
                     <div class="d-flex flex-column">
@@ -240,9 +278,9 @@
                     </div>
                 </div>
             </div>
-            
+
             <hr>
-            
+
             <div class="row py-3">
                 <div class="col-md-6 text-center text-md-start">
                     <p class="mb-0">&copy; {{ date('Y') }} <span class="text-primary">Rihlat</span>. {{ __('messages.all_rights_reserved') }}</p>

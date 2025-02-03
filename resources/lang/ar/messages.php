@@ -8,13 +8,13 @@ return [
     'destinations' => 'الوجهات',
     'about' => 'من نحن',
     'contact' => 'اتصل بنا',
-    
+
     // Auth
     'login' => 'تسجيل الدخول',
     'register' => 'إنشاء حساب',
     'logout' => 'تسجيل الخروج',
     'profile' => 'الملف الشخصي',
-    
+
     // Hero Section
     'hero_title' => 'ابحث واحجز',
     'hero_subtitle' => 'رحلة أحلامك',
@@ -22,12 +22,12 @@ return [
     'select_destination' => 'اختر الوجهة',
     'select_date' => 'اختر التاريخ',
     'search' => 'بحث',
-    
+
     // Stats
     'destinations_count' => 'وجهة',
     'customers_count' => 'عميل',
     'support' => 'دعم متواصل',
-    
+
     // Services
     'flight_booking' => 'حجز الطيران',
     'flight_description' => 'أفضل العروض على الرحلات حول العالم',
@@ -37,29 +37,34 @@ return [
     'tour_description' => 'باقات سياحية مخصصة',
     'car_rental' => 'تأجير السيارات',
     'car_description' => 'استكشف بحرية',
-    
+
     // Why Choose Us
     'why_choose_us' => 'لماذا تختارنا؟',
     'best_price' => 'أفضل الأسعار مضمونة',
     'expert_guides' => 'مرشدون سياحيون محترفون',
     'custom_plans' => 'خطط سفر مخصصة',
     'support_247' => 'دعم على مدار الساعة',
-    
+
     // Testimonials
     'testimonials_title' => 'ماذا يقول مسافرونا',
     'testimonials_subtitle' => 'أكثر من 100 ألف مسافر يثقون بنا',
-    
+
     // Popular Destinations
     'popular_destinations' => 'اكتشف وجهاتنا',
     'popular_subtitle' => 'الشعبية',
     'destinations_description' => 'اكتشف أجمل الأماكن في العالم. من الشواطئ الخلابة إلى المدن التاريخية، لدينا الوجهة المثالية لكل مسافر.',
     'view_all' => 'عرض جميع الوجهات',
-    
+
     // Newsletter
     'newsletter_title' => 'اشترك في نشرتنا الإخبارية',
     'enter_email' => 'أدخل بريدك الإلكتروني',
     'subscribe' => 'اشترك',
-    
+'email' => 'البريد الإلكتروني',
+'password' => 'كلمة المرور',
+'forgot_password' => 'نسيت كلمة المرور',
+'show_password' => 'إظهار كلمة المرور',
+'remember_me' => 'تذكرني على هذا الجهاز',
+'sign_in' => 'تسجيل الدخول',
     // Footer
     'quick_links' => 'روابط سريعة',
     'our_services' => 'خدماتنا',
@@ -67,9 +72,82 @@ return [
     'all_rights_reserved' => 'جميع الحقوق محفوظة',
     'privacy_policy' => 'سياسة الخصوصية',
     'terms_of_service' => 'شروط الاستخدام',
-    
+    'Login_to_your_account'=>'تسجيل الدخول لحسابك',
     // Messages
     'booking_success' => 'تم حجز رحلتك بنجاح!',
     'contact_success' => 'شكراً لتواصلك معنا. سنرد عليك في أقرب وقت ممكن.',
     'newsletter_success' => 'شكراً لاشتراكك في نشرتنا الإخبارية!',
+
+      // Visa Management
+      'visa_management' => 'إدارة التأشيرات',
+      'total_requests' => 'إجمالي الطلبات',
+      'search' => 'بحث',
+      'search_placeholder' => 'اسم العميل أو البريد الإلكتروني...',
+      'visa_type' => 'نوع التأشيرة',
+      'all' => 'الكل',
+      'hajj_visa' => 'تأشيرة حج',
+      'umrah_visa' => 'تأشيرة عمرة',
+      'work_visa' => 'تأشيرة عمل',
+      'status' => 'الحالة',
+      'pending' => 'قيد الانتظار',
+      'completed' => 'مكتملة',
+      'rejected' => 'مرفوضة',
+      'reset' => 'إعادة تعيين',
+
+      // Table Headers
+      'customer' => 'العميل',
+      'submission_date' => 'تاريخ التقديم',
+      'documents' => 'المستندات',
+      'actions' => 'الإجراءات',
+
+      // Actions
+      'view' => 'عرض',
+      'accept' => 'قبول',
+      'reject' => 'رفض',
+      'no_visas' => 'لا توجد طلبات تأشيرات',
+
+      // Modal
+      'update_visa_status' => 'تحديث حالة التأشيرة',
+      'notes' => 'ملاحظات',
+      'notes_placeholder' => 'أدخل ملاحظات حول قرارك...',
+      'cancel' => 'إلغاء',
+      'save_changes' => 'حفظ التغييرات',
+
+      // Document count
+      'documents_count' => ':count مستندات',
+
+      // Auth
+      'login' => 'تسجيل الدخول',
+      'register' => 'إنشاء حساب',
+      'logout' => 'تسجيل الخروج',
+      'profile' => 'الملف الشخصي',
+      'email' => 'البريد الإلكتروني',
+      'password' => 'كلمة المرور',
+      'forgot_password' => 'نسيت كلمة المرور',
+      'remember_me' => 'تذكرني على هذا الجهاز',
+      'sign_in' => 'تسجيل الدخول',
+      'Login_to_your_account' => 'تسجيل الدخول لحسابك',
+
+      // Navigation
+      'dashboard' => 'لوحة التحكم',
+      'users' => 'المستخدمين',
+      'services' => 'الخدمات',
+      'bookings' => 'الحجوزات',
+      'settings' => 'الإعدادات',
+
+      // Common
+      'show_password' => 'إظهار كلمة المرور',
+      'hide_password' => 'إخفاء كلمة المرور',
+      'enter_email' => 'أدخل البريد الإلكتروني',
+      'submit' => 'إرسال',
+      'save' => 'حفظ',
+      'delete' => 'حذف',
+      'edit' => 'تعديل',
+      'create' => 'إنشاء',
+      'back' => 'رجوع',
+
+      'name' => 'الاسم',
+      'created_at' => 'تاريخ الإنشاء',
+      'no_users' => 'لا يوجد مستخدمين',
+      'delete_confirm' => 'هل أنت متأكد من حذف هذا المستخدم؟',
 ];
