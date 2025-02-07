@@ -41,7 +41,11 @@ class CustomerController extends Controller
             'notifications'
         ));
     }
-
+    public function edit()
+    {
+        $customer = auth('customer')->user();
+        return view('customer.profile.edit', compact('customer'));
+    }
     public function profile()
     {
         $customer = auth('customer')->user();
@@ -102,21 +106,27 @@ class CustomerController extends Controller
         $request->validate([
             'photo' => ['required', 'image', 'max:1024'], // max 1MB
         ]);
-
+    
         $customer = auth('customer')->user();
-
-        if ($customer->photo) {
-            Storage::disk('public')->delete($customer->photo);
-        }
-
-        $path = $request->file('photo')->store('customer-photos', 'public');
         
-        $customer->update([
-            'photo' => $path,
-        ]);
-
-        return redirect()->route('customer.profile')
-            ->with('success', 'تم تحديث الصورة الشخصية بنجاح');
+        try {
+            if ($customer->photo && Storage::disk('public')->exists($customer->photo)) {
+                Storage::disk('public')->delete($customer->photo);
+            }
+            
+            $path = $request->file('photo')->store('customer-photos', 'public');
+            
+            $customer->update([
+                'photo' => $path,
+            ]);
+    
+            return redirect()->route('customer.profile')
+                ->with('success', 'تم تحديث الصورة الشخصية بنجاح');
+        } catch (\Exception $e) {
+            dd($e);
+            return redirect()->route('customer.profile')
+                ->with('error', 'حدث خطأ أثناء تحديث الصورة: ' . $e->getMessage());
+        }
     }
 
     public function updateNotificationPreferences(Request $request)

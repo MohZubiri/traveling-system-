@@ -41,7 +41,7 @@
     <!-- Filters -->
     <div class="card mb-4">
         <div class="card-body">
-            <form action="{{ route('customer.transactions') }}" method="GET" class="row g-3">
+            <form action="{{ route('customer.transactions.index') }}" method="GET" class="row g-3">
                 <div class="col-md-3">
                     <label class="form-label">نوع الخدمة</label>
                     <select name="type" class="form-select">
@@ -71,7 +71,7 @@
                     <button type="submit" class="btn btn-primary">
                         <i class="fas fa-filter me-1"></i> تصفية
                     </button>
-                    <a href="{{ route('customer.transactions') }}" class="btn btn-light">
+                    <a href="{{ route('customer.transactions.index') }}" class="btn btn-light">
                         <i class="fas fa-redo me-1"></i> إعادة تعيين
                     </a>
                 </div>

@@ -9,7 +9,7 @@
         <div class="col-md-4">
             <div class="card mb-4">
                 <div class="card-body text-center">
-                    <img src="https://via.placeholder.com/150" alt="Profile Picture" class="rounded-circle mb-3" width="150">
+                    <img src="{{ ($customer->photo)?asset('storage/'.$customer->photo) : asset('assets/img/avatar.png') }}" alt="Profile Picture" class="rounded-circle mb-3" width="150">
                     <h4 class="mb-0">{{ $customer->name }}</h4>
                     <p class="text-muted">{{ $customer->nationality }}</p>
                     <div class="mt-3">
@@ -41,13 +41,13 @@
                 <div class="card-body">
                     <h5 class="card-title mb-3">روابط سريعة</h5>
                     <div class="list-group list-group-flush">
-                        <a href="{{ route('customer.visas') }}" class="list-group-item list-group-item-action">
+                        <a href="{{ route('customer.visas.index') }}" class="list-group-item list-group-item-action">
                             <i class="fas fa-passport me-2"></i> التأشيرات
                         </a>
-                        <a href="{{ route('customer.bookings') }}" class="list-group-item list-group-item-action">
+                        <a href="{{ route('customer.bookings.index') }}" class="list-group-item list-group-item-action">
                             <i class="fas fa-calendar me-2"></i> الحجوزات
                         </a>
-                        <a href="{{ route('customer.transactions') }}" class="list-group-item list-group-item-action">
+                        <a href="{{ route('customer.transactions.index') }}" class="list-group-item list-group-item-action">
                             <i class="fas fa-history me-2"></i> سجل المعاملات
                         </a>
                         <a href="{{ route('customer.notifications') }}" class="list-group-item list-group-item-action">

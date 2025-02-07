@@ -9,7 +9,7 @@ use App\Models\Transaction;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
-class BookingController extends Controller
+class CustomerBookingController extends Controller
 {
     public function index()
     {

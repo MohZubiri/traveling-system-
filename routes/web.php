@@ -4,10 +4,15 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\DestinationController;
-use App\Http\Controllers\CustomerAuthController;
+use App\Http\Controllers\Auth\CustomerAuthController;
 use App\Http\Controllers\Auth\AdminAuthController;
 use App\Http\Controllers\Admin\UserController;
-use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\Customer\TransactionController;
+use App\Http\Controllers\Customer\CustomerController;
+use App\Http\Controllers\Customer\VisaController;
+use App\Http\Controllers\Customer\PaymentController;
+use App\Http\Controllers\Customer\NotificationController;
+use App\Http\Controllers\Customer\CustomerBookingController;
 use App\Http\Controllers\Admin\ServiceController as AdminServiceController;
 use App\Http\Controllers\Admin\BookingController as AdminBookingController;
 use App\Http\Controllers\Admin\PaymentController as AdminPaymentController;
@@ -48,18 +53,28 @@ Route::prefix('customer')->name('customer.')->group(function () {
         Route::get('profile', [CustomerController::class, 'profile'])->name('profile');
         Route::put('profile', [CustomerController::class, 'updateProfile'])->name('profile.update');
         Route::put('profile/password', [CustomerController::class, 'updatePassword'])->name('password.update');
-
+        Route::put('/profile/photo', [CustomerController::class, 'updatePhoto'])->name('profile.photo');
+        Route::put('/profile/notifications', [CustomerController::class, 'updateNotificationPreferences'])->name('profile.notifications');
+        Route::get('profile/edit', [CustomerController::class, 'edit'])->name('profile.edit');  // Add this line
         // Bookings
-        Route::resource('bookings', Customer\BookingController::class);
-        Route::post('bookings/{booking}/cancel', [Customer\BookingController::class, 'cancel'])
+        Route::resource('bookings', CustomerBookingController::class);
+        Route::post('bookings/{booking}/cancel', [CustomerBookingController::class, 'cancel'])
             ->name('bookings.cancel');
 
+            // Transactions
+Route::get('transactions', [TransactionController::class, 'index'])->name('transactions.index');
+Route::get('transactions/{transaction}', [TransactionController::class, 'show'])->name('transactions.show');
         // Visas
-        Route::resource('visas', Customer\VisaController::class);
-
+        Route::resource('visas', VisaController::class);
+// Notifications
+Route::get('notifications', [NotificationController::class, 'index'])->name('notifications');
+Route::put('notifications/{notification}/read', [NotificationController::class, 'markAsRead'])->name('notifications.read');
+Route::put('notifications/read-all', [NotificationController::class, 'markAllAsRead'])->name('notifications.readAll');
+Route::get('notifications/preferences', [NotificationController::class, 'preferences'])->name('notifications.preferences');
+Route::put('notifications/preferences', [NotificationController::class, 'updatePreferences'])->name('notifications.preferences.update');
         // Payments
-        Route::get('payments', [Customer\PaymentController::class, 'index'])->name('payments.index');
-        Route::get('payments/{payment}', [Customer\PaymentController::class, 'show'])->name('payments.show');
+        Route::get('payments', [PaymentController::class, 'index'])->name('payments.index');
+        Route::get('payments/{payment}', [PaymentController::class, 'show'])->name('payments.show');
     });
 });
 
